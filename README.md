@@ -13,8 +13,8 @@ Trmutex is simple and easy to use. Here is an example:
     factory := trmutex.NewFactory()
     mutex := factory.Require("MyTemporaryResourceName")
     mutex.Lock()
-    defer mutex.Lock()
     ...
+    mutex.Unlock()
 
 
 In addition, trmutex.Mutex implements sync.Locker and is free to be copied without causing any deallock.
