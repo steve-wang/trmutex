@@ -5,7 +5,7 @@ Trmutex means "temporary resource mutex" and therefore is designed to manipulate
 
 The difference between trmutex.Mutex and sync.Mutex is that the former is able to create an underlying mutex if it does not exist before and to synchronize the following access launched by other goroutines, and to destroy the underlying mutex when all of the resource access synchronization is finished.
 
-Trmutex is composed of two structs, Mutex, which is to synchronize like sync.Mutex, and Factory, used to create a mutex corresponding to a temporary resource specified with a string id.
+Trmutex is composed of two structs, Mutex, which is used to synchronize like sync.Mutex, and Factory, which is used to create a mutex corresponding to a temporary resource specified with a string id.
 
 Trmutex is simple and easy to use. Here is an example:
 
