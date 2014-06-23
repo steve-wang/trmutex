@@ -59,7 +59,7 @@ func (f *Factory) release(id string) *sync.Mutex {
 	defer f.mutex.Unlock()
 	item, ok := f.items[id]
 	if !ok {
-		panic(fmt.Errorf("item(%d) not found", id))
+		panic(fmt.Errorf("mutex(%s) not found", id))
 	}
 	if item.ref <= 0 {
 		panic(fmt.Errorf("invalid ref: %d", item.ref))
